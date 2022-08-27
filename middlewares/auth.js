@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const EAccountTypes = require("../utils/constants");
+const { EAccountTypes } = require("../utils/constants");
 const ApiResponseMessages = require("../utils/apiResponseMessages");
 const { StatusCodes: EHttpStatusCodes } = require("http-status-codes");
 

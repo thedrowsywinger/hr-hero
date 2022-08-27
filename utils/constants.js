@@ -4,6 +4,13 @@ const EAccountTypes = {
   EMPLOYEE: 3
 }
 
+const ELeaveStatus = {
+  PENDING: 1,
+  APPROVED: 2,
+  DENIED: 3
+}
+
 module.exports = {
-  EAccountTypes
+  EAccountTypes,
+  ELeaveStatus
 }

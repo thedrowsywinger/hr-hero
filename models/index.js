@@ -18,6 +18,8 @@ const {
   Profile,
   ProfileTypeMap
 } = require("./profile")
+const { Attendance } = require("./attendance")
+const { LeaveLogs } = require("./leaveLogs")
 
 const applyRelationshipSetup = (sequelize) => {
   /* Profile Auth User connection */
@@ -59,6 +61,27 @@ const applyRelationshipSetup = (sequelize) => {
     through: ProfileTypeMap,
   });
   /* Account Type Profile Mapping */
+  /* Attendance Profile Mapping */
+  Attendance.belongsTo(Profile, {
+    foreignKey: 'profileId',
+    targetKey: 'id',
+    allowNull: false
+  })
+  /* Attendance Profile Mapping */
+  /* Leave Log Profile Mapping */
+  LeaveLogs.belongsTo(Profile, {
+    foreignKey: 'profileId',
+    targetKey: 'id',
+    allowNull: false
+  })
+  /* Leave Log Profile Mapping */
+  /* Leave Log Manager Mapping */
+  LeaveLogs.belongsTo(Profile, {
+    foreignKey: 'managerId',
+    targetKey: 'id',
+    allowNull: false
+  })
+  /* Leave Log Manager Mapping */
 }
 
 applyRelationshipSetup(sequelize);

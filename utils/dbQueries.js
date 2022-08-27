@@ -31,6 +31,23 @@ const registerEmployeeQuery = async (req, res, transaction, accountTypeInstance)
   )
 }
 
+const attendanceQueries = {
+  checkInFindQuery: function (dd, mm, yyyy) {
+    const query = `
+    select 
+      * 
+    from public."Attendances" a 
+    where 
+      to_char(a."checkIn", 'dd') = '${dd}'
+      and to_char(a."checkIn", 'mm') = '${mm}'
+      and to_char(a."checkIn", 'yyyy') = '${yyyy}'
+      and a."checkOut" is null;
+    `
+    return query
+  }
+}
+
 module.exports = {
-  registerEmployeeQuery
+  registerEmployeeQuery,
+  attendanceQueries
 }
