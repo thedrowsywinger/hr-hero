@@ -258,6 +258,37 @@ Sample Response:
 }
 ```
 
+##### Weekly Attendance:
+
+URL (GET REQUEST): 127.0.0.1:3001/api/attendance/report/weekly
+Sample GET request:
+
+```sh
+{
+    "week": "34"
+}
+```
+
+Sample Response:
+
+```sh
+{
+    "message": "Succesful",
+    "data": [
+        {
+            "id": 1,
+            "profileId": 16,
+            "name": "Scott Mctominay",
+            "week": 34,
+            "checkInDate": "2022-08-27",
+            "checkInTime": "13:17:02.611",
+            "checkOutDate": "2022-08-27",
+            "checkOutTime": "13:42:37.038"
+        }
+    ]
+}
+```
+
 ##### Monthly Attendance:
 
 URL (GET REQUEST): 127.0.0.1:3001/api/attendance/report/monthly
@@ -273,7 +304,7 @@ Sample Response:
 
 ```sh
 {
-
+    "message": "Succesful",
     "data": [
         {
             "id": 1,

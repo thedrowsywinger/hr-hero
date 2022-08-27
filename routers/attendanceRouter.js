@@ -8,7 +8,8 @@ const {
   applyLeaveController,
   processLeaveController,
   attendanceReportDailyController,
-  attendanceReportMonthlyController
+  attendanceReportMonthlyController,
+  attendanceReportWeeklyController
 } = require("../controllers/attendanceController");
 
 const { validateYupSchema } = require("../middlewares/validation");
@@ -25,6 +26,6 @@ router.post(ApiRoutes.APPLY_LEAVE, auth, validateYupSchema(applyLeaveSchema), ap
 router.post(ApiRoutes.PROCESS_LEAVE, auth, checkManager, validateYupSchema(processLeaveSchema), processLeaveController);
 router.get(ApiRoutes.ATTENDANCE_REPORT_DAILY, auth, attendanceReportDailyController)
 router.get(ApiRoutes.ATTENDANCE_REPORT_MONTHLY, auth, attendanceReportMonthlyController)
-
+router.get(ApiRoutes.ATTENDANCE_REPORT_WEEKLY, auth, attendanceReportWeeklyController)
 
 module.exports = router;
