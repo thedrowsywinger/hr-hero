@@ -310,7 +310,59 @@ const registerEmployeeController = async (req, res) => {
     )
 
   } catch (e) {
-    return res.status(400).send(
+    return res.status(EHttpStatusCodes.BAD_REQUEST).send(
+      {
+        "message": ApiResponseMessages.SYSTEM_ERROR
+      }
+    )
+  }
+}
+
+const getUsersController = async (req, res) => {
+  try {
+
+    const users = await Profile.findAll()
+    if (users.length === 0) {
+      return res.status(EHttpStatusCodes.BAD_REQUEST).send(
+        {
+          "message": ApiResponseMessages.NO_USERS
+        }
+      )
+    }
+    return res.status(EHttpStatusCodes.ACCEPTED).send(
+      {
+        "message": ApiResponseMessages.SUCCESS,
+        "data": users
+      }
+    )
+  } catch (e) {
+    return res.status(EHttpStatusCodes.BAD_REQUEST).send(
+      {
+        "message": ApiResponseMessages.SYSTEM_ERROR
+      }
+    )
+  }
+}
+
+const getUserByIdController = async (req, res) => {
+  try {
+
+    const user = await Profile.findOne({ where: { id: req.query.id } })
+    if (!user) {
+      return res.status(EHttpStatusCodes.BAD_REQUEST).send(
+        {
+          "message": ApiResponseMessages.INVALID_USER
+        }
+      )
+    }
+    return res.status(EHttpStatusCodes.ACCEPTED).send(
+      {
+        "message": ApiResponseMessages.SUCCESS,
+        "data": user
+      }
+    )
+  } catch (e) {
+    return res.status(EHttpStatusCodes.BAD_REQUEST).send(
       {
         "message": ApiResponseMessages.SYSTEM_ERROR
       }
@@ -322,5 +374,7 @@ module.exports = {
   testController,
   seederRequestController,
   registerEmployeeController,
-  loginController
+  loginController,
+  getUsersController,
+  getUserByIdController
 }

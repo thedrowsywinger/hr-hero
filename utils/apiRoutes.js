@@ -10,6 +10,8 @@ const ApiRoutes = {
   // core
   REGISTER_USER: "/register/user-profile/",
   LOGIN: "/login/",
+  GET_USERS: "/get-users/",
+  GET_USER_BY_ID: "/get-user/",
 
   // attendance
   CHECKIN: "/check-in",

@@ -14,6 +14,7 @@ const ApiResponseMessages = {
   NO_OTHER_USER_ALLOWED: "We are currently not allowing other types of user registration",
   NO_CHECK_IN_TODAY: "There was no check-in today, or the check-ins today have check-outs already",
   NO_ATTENDANCE: "There is no record of attendance for current user",
+  NO_USERS: "There are no users at the moment",
 
   SYSTEM_ERROR: "Sorry, something went wrong",
 }

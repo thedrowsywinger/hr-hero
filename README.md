@@ -236,13 +236,14 @@ Sample Response:
 
 ##### Daily Attendance:
 
-URL (POST REQUEST): 127.0.0.1:3001/api/attendance/report/daily
-Empty POST request:
+URL (GET REQUEST): 127.0.0.1:3001/api/attendance/report/daily
+Empty GET request:
 
 Sample Response:
 
 ```sh
 {
+    "message": "Succesful",
     "data": [
         {
             "id": 1,
@@ -259,8 +260,8 @@ Sample Response:
 
 ##### Monthly Attendance:
 
-URL (POST REQUEST): 127.0.0.1:3001/api/attendance/report/monthly
-Sample POST request:
+URL (GET REQUEST): 127.0.0.1:3001/api/attendance/report/monthly
+Sample GET request:
 
 ```sh
 {
@@ -272,6 +273,7 @@ Sample Response:
 
 ```sh
 {
+
     "data": [
         {
             "id": 1,
@@ -283,5 +285,87 @@ Sample Response:
             "checkOutTime": "13:42:37.038"
         }
     ]
+}
+```
+
+##### Get All Users:
+
+URL (GET REQUEST): 127.0.0.1:3001/api/core/get-users/
+EMPTY GET request:
+
+Sample Response:
+
+```sh
+{
+    "message": "Succesful",
+    "data": [
+        {
+            "id": 2,
+            "name": "Super Admin",
+            "contactNumber": "01837645524",
+            "email": "",
+            "createdAt": "2022-08-27T10:08:57.452Z",
+            "updatedAt": "2022-08-27T10:08:57.452Z",
+            "userId": 2,
+            "createdBy": null,
+            "updatedBy": null
+        },
+        {
+            "id": 1,
+            "name": "John Manager",
+            "contactNumber": "01789652243",
+            "email": "john@hrhero.com",
+            "createdAt": "2022-08-27T10:01:49.739Z",
+            "updatedAt": "2022-08-27T10:01:49.739Z",
+            "userId": 1,
+            "createdBy": 2,
+            "updatedBy": 2
+        },
+        {
+            "id": 16,
+            "name": "Scott Mctominay",
+            "contactNumber": "01789653343",
+            "email": "scott@hrhero.com",
+            "createdAt": "2022-08-27T12:20:31.003Z",
+            "updatedAt": "2022-08-27T12:20:31.003Z",
+            "userId": 24,
+            "createdBy": 2,
+            "updatedBy": 2
+        },
+        {
+            "id": 17,
+            "name": "Harry Maguire",
+            "contactNumber": "01789353343",
+            "email": "harry@hrhero.com",
+            "createdAt": "2022-08-27T12:23:02.423Z",
+            "updatedAt": "2022-08-27T12:23:02.423Z",
+            "userId": 25,
+            "createdBy": 2,
+            "updatedBy": 2
+        }
+    ]
+}
+```
+
+##### Get User by id:
+
+URL (GET REQUEST): 127.0.0.1:3001/api/core/get-user/?id=1
+
+Sample Response:
+
+```sh
+{
+    "message": "Succesful",
+    "data": {
+        "id": 1,
+        "name": "John Manager",
+        "contactNumber": "01789652243",
+        "email": "john@hrhero.com",
+        "createdAt": "2022-08-27T10:01:49.739Z",
+        "updatedAt": "2022-08-27T10:01:49.739Z",
+        "userId": 1,
+        "createdBy": 2,
+        "updatedBy": 2
+    }
 }
 ```

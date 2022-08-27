@@ -78,6 +78,25 @@ const attendanceQueries = {
       and to_char(a."checkIn", 'mm') = '${month}';
     `
     return query
+  },
+  weeklyReport: function (profileId, week) {
+    const query = `
+      select 
+        a.id,
+        p.id as "profileId",
+        p."name",
+        extract('week' from a."checkIn") as week,
+        to_char(a."checkIn", 'yyyy-mm-dd') as "checkInDate",
+        a."checkIn"::time as "checkInTime",
+        to_char(a."checkOut", 'yyyy-mm-dd') as "checkOutDate",
+        a."checkOut"::time as "checkOutTime"
+      from public."Attendances" a
+      left join public."Profiles" p on p.id = a."profileId"
+      where 
+        p.id = ${profileId}
+        and extract('week' from a."checkIn") = ${week};
+    `
+    return query
   }
 }
 

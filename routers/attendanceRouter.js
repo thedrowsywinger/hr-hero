@@ -23,8 +23,8 @@ router.post(ApiRoutes.CHECKIN, auth, checkInController);
 router.post(ApiRoutes.CHECKOUT, auth, checkOutController);
 router.post(ApiRoutes.APPLY_LEAVE, auth, validateYupSchema(applyLeaveSchema), applyLeaveController);
 router.post(ApiRoutes.PROCESS_LEAVE, auth, checkManager, validateYupSchema(processLeaveSchema), processLeaveController);
-router.post(ApiRoutes.ATTENDANCE_REPORT_DAILY, auth, attendanceReportDailyController)
-router.post(ApiRoutes.ATTENDANCE_REPORT_MONTHLY, auth, attendanceReportMonthlyController)
+router.get(ApiRoutes.ATTENDANCE_REPORT_DAILY, auth, attendanceReportDailyController)
+router.get(ApiRoutes.ATTENDANCE_REPORT_MONTHLY, auth, attendanceReportMonthlyController)
 
 
 module.exports = router;
