@@ -68,7 +68,6 @@ const checkOutController = async (req, res) => {
     return res.status(EHttpStatusCodes.ACCEPTED).send(
       {
         "message": ApiResponseMessages.SUCCESS,
-        "data": checkOutEntry
       }
     )
 
