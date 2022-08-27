@@ -60,6 +60,24 @@ const attendanceQueries = {
     where p.id = ${profileId};
     `
     return query
+  },
+  monthlyReport: function (profileId, month) {
+    const query = `
+    select 
+      a.id,
+      p.id as "profileId",
+      p."name",
+      to_char(a."checkIn", 'yyyy-mm-dd') as "checkInDate",
+      a."checkIn"::time as "checkInTime",
+      to_char(a."checkOut", 'yyyy-mm-dd') as "checkOutDate",
+      a."checkOut"::time as "checkOutTime"
+    from public."Attendances" a
+    left join public."Profiles" p on p.id = a."profileId"
+    where 
+      p.id = ${profileId}
+      and to_char(a."checkIn", 'mm') = '${month}';
+    `
+    return query
   }
 }
 

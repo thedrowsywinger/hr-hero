@@ -256,3 +256,32 @@ Sample Response:
     ]
 }
 ```
+
+##### Monthly Attendance:
+
+URL (POST REQUEST): 127.0.0.1:3001/api/attendance/report/monthly
+Sample POST request:
+
+```sh
+{
+    "month": "08"
+}
+```
+
+Sample Response:
+
+```sh
+{
+    "data": [
+        {
+            "id": 1,
+            "profileId": 16,
+            "name": "Scott Mctominay",
+            "checkInDate": "2022-08-27",
+            "checkInTime": "13:17:02.611",
+            "checkOutDate": "2022-08-27",
+            "checkOutTime": "13:42:37.038"
+        }
+    ]
+}
+```
