@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "e3df0962-f47d-4b2b-b533-aaa4c3db26a0",
+		"name": "MainCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5076495"
+	},
+	"item": [
+		{
+			"name": "Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3001/api/core/test/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"core",
+						"test",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seeder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3001/api/core/seeder",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"core",
+						"seeder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"scottMctominay\",\n    \"password\": \"Midfielder1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/core/login/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"core",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyIiwiaWF0IjoxNjYxNjAwMDYwLCJleHAiOjE2NjE2ODY0NjB9.DautAcR8nOdT8a2Xfm_j45-cf9CzHNuu2tsVssGFY54",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"harryMaguire\",\n    \"password\": \"Defender1\",\n    \"name\": \"Harry Maguire\",\n    \"contactNumber\": \"01789353343\",\n    \"email\": \"harry@hrhero.com\",\n    \"accountType\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/core/register/user-profile/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"core",
+						"register",
+						"user-profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNCIsImlhdCI6MTY2MTYwNTQ4MiwiZXhwIjoxNjYxNjkxODgyfQ.0kkKMH8DRv4r-3SxKDTmRad0pggEN0QBQDo-GzhKtBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/check-in",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"check-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daily Attendance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNCIsImlhdCI6MTY2MTYwNTQ4MiwiZXhwIjoxNjYxNjkxODgyfQ.0kkKMH8DRv4r-3SxKDTmRad0pggEN0QBQDo-GzhKtBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/report/daily",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"report",
+						"daily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monthly Attendance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNCIsImlhdCI6MTY2MTYwNTQ4MiwiZXhwIjoxNjYxNjkxODgyfQ.0kkKMH8DRv4r-3SxKDTmRad0pggEN0QBQDo-GzhKtBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"month\": \"08\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/report/monthly",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"report",
+						"monthly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weekly Attendance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNCIsImlhdCI6MTY2MTYwNTQ4MiwiZXhwIjoxNjYxNjkxODgyfQ.0kkKMH8DRv4r-3SxKDTmRad0pggEN0QBQDo-GzhKtBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"month\": \"08\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/report/monthly",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"report",
+						"monthly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Out",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNCIsImlhdCI6MTY2MTYwNTQ4MiwiZXhwIjoxNjYxNjkxODgyfQ.0kkKMH8DRv4r-3SxKDTmRad0pggEN0QBQDo-GzhKtBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/check-out",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"check-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Leave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNCIsImlhdCI6MTY2MTYwNTQ4MiwiZXhwIjoxNjYxNjkxODgyfQ.0kkKMH8DRv4r-3SxKDTmRad0pggEN0QBQDo-GzhKtBc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2022-08-29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/apply-leave",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"apply-leave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Leave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxIiwiaWF0IjoxNjYxNjA5MjY1LCJleHAiOjE2NjE2OTU2NjV9.PyKoL6DJyYaNk2q6twAlmivBWzVE8Rbn_2rPKEaClYE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"status\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/attendance/process-leave",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"attendance",
+						"process-leave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxIiwiaWF0IjoxNjYxNjA5MjY1LCJleHAiOjE2NjE2OTU2NjV9.PyKoL6DJyYaNk2q6twAlmivBWzVE8Rbn_2rPKEaClYE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/core/get-users/?id=1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"core",
+						"get-users",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIxIiwiaWF0IjoxNjYxNjA5MjY1LCJleHAiOjE2NjE2OTU2NjV9.PyKoL6DJyYaNk2q6twAlmivBWzVE8Rbn_2rPKEaClYE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/api/core/get-user/?id=1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"core",
+						"get-user",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
