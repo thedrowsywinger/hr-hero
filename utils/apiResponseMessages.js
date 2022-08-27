@@ -13,6 +13,7 @@ const ApiResponseMessages = {
   UNAUTHORIZED_ACCESS: "Current User does not have access.",
   NO_OTHER_USER_ALLOWED: "We are currently not allowing other types of user registration",
   NO_CHECK_IN_TODAY: "There was no check-in today, or the check-ins today have check-outs already",
+  NO_ATTENDANCE: "There is no record of attendance for current user",
 
   SYSTEM_ERROR: "Sorry, something went wrong",
 }

@@ -44,6 +44,22 @@ const attendanceQueries = {
       and a."checkOut" is null;
     `
     return query
+  },
+  dailyReport: function (profileId) {
+    const query = `
+    select 
+      a.id,
+      p.id as "profileId",
+      p."name",
+      to_char(a."checkIn", 'yyyy-mm-dd') as "checkInDate",
+      a."checkIn"::time as "checkInTime",
+      to_char(a."checkOut", 'yyyy-mm-dd') as "checkOutDate",
+      a."checkOut"::time as "checkOutTime"
+    from public."Attendances" a
+    left join public."Profiles" p on p.id = a."profileId"
+    where p.id = ${profileId};
+    `
+    return query
   }
 }
 

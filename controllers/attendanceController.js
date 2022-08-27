@@ -142,9 +142,37 @@ const processLeaveController = async (req, res) => {
   }
 }
 
+const attendanceReportDailyController = async (req, res) => {
+  try {
+
+    const checkInInstance = await sequelize.query(attendanceQueries.dailyReport(req.profileId), { type: QueryTypes.SELECT });
+    if (!checkInInstance) {
+      return res.status(EHttpStatusCodes.BAD_REQUEST).send(
+        {
+          "message": ApiResponseMessages.NO_ATTENDANCE
+        }
+      )
+    }
+    return res.status(EHttpStatusCodes.ACCEPTED).send(
+      {
+        "data": checkInInstance
+      }
+    )
+
+
+  } catch (e) {
+    return res.status(EHttpStatusCodes.BAD_REQUEST).send(
+      {
+        "message": ApiResponseMessages.SYSTEM_ERROR
+      }
+    )
+  }
+}
+
 module.exports = {
   checkInController,
   checkOutController,
   applyLeaveController,
-  processLeaveController
+  processLeaveController,
+  attendanceReportDailyController
 }
