@@ -22,6 +22,9 @@ yarn
 yarn dev
 ```
 
+Inside the env folder, please add a ".env.test" file. A sample snippet of what
+should be inside of it can be seen in env/.env.local
+
 ##### Running the seeder API first: (This can be automated)
 
 URL (POST REQUEST): 127.0.0.1:3001/api/core/seeder
